@@ -60,14 +60,19 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <!-- <i class="fas fa-fw fa-cog"></i> -->
+                    <i class='fas fa-book'></i>
+                    <span>Surat</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <h6 class="collapse-header">Daftar Surat:</h6>
+                        <a class="collapse-item" href="/Skk/index">SKK</a>
+                        <a class="collapse-item" href="/Skm/index">SKM</a>
+                        <a class="collapse-item" href="cards.html">SKTM</a>
+                        <a class="collapse-item" href="cards.html">SL</a>
+                        <a class="collapse-item" href="cards.html">SPA</a>
+                        <a class="collapse-item" href="cards.html">SPK</a>
                     </div>
                 </div>
             </li>
@@ -367,115 +372,148 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Form Surat Kematian</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
                     <!-- Content Row -->
 <!-- Dashboard -->
-<div class="fix"> 
-      <div class="container" style="margin-top: 40px; margin-bottom: 50px;">
-        <hr>
-        <form action="<?=base_url('/Skk/form_skk')?>" method="POST">
-          <h3>Data Meninggal</h3>
-          <label for="" style="margin-bottom: 5px;">Nama Lengkap</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text " style="height: 38px;"><i class="fas fa-user" ></i></div>
-            </div>
-            <input type="text" name="nama" class="form-control" placeholder="Masukan Nama" style="margin-bottom: 5px;" required>
-          </div>
+                    
 
-          <label for="" style="margin-bottom: 5px;">Tempat Lahir</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text " style="height: 38px;"><i class="fas fa-address-card"></i></div>
-            </div>
-            <input type="text" name="tempat_lahir" class="form-control" placeholder="Masukan Tempat Lahir" style="margin-bottom: 5px;" required>
-          </div>
+                    <!-- Content Row -->
+                    <div class="container-fluid">
+                    <!-- Data Tabel -->
+                    <div class="card shadow mb-4">
+                      <div class="card-header">
+                          <div class="d-sm-flex align-items-center justify-content-between">
+                              <h4 class="m-0 font-weight-bold text-primary">Pengajuan SKK</h4>
+                          </div>
+                      </div>
+                      <div class="card-body">
+                          <div class="table-responsive">
+                              <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                                  <thead>
+                                      <tr>
+                                          <th>id_surat</th>
+                                          <th>kode_surat</th>
+                                          <th>nama</th>
+                                          <th>tempat lahir</th>
+                                          <th>tgl lahir</th>
+                                          <th>gender</th>
+                                          <th>pekerjaan</th>
+                                          <th>alamat</th>
+                                          <th>tgl meninggal</th>
+                                          <th>umur</th>
+                                          <th>penyebab</th>
+                                          <th>Menu</th>
 
-          <label for="" style="margin-bottom: 5px;">Tanggal Lahir</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text " style="height: 38px;"><i class="fas fa-address-card"></i></div>
-            </div>
-            <input type="date" name="tgl_lahir" class="form-control" placeholder="Masukan Tanggal Lahir" style="margin-bottom: 5px;" required>
-          </div>
-
-          <label for="" style="margin-bottom: 5px;">Umur</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text " style="height: 38px;"><i class="fas fa-address-card"></i></div>
-            </div>
-            <input type="number" name="umur" class="form-control" placeholder="Masukan Umur" style="margin-bottom: 5px;" required>
-          </div>
-
-          <label for="" style="margin-bottom: 5px;">Jenis Kelamin </label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text " style="height: 38px;"><i class="fas fa-address-card"></i></div>
-            </div>
-              <select class="form-control form-control" name="gender">
-                <option selected>Pilih</option>
-                <option>Laki-Laki</option>
-                <option>Perempuan</option>
-              </select>
-            </div>
-
-            <label for="" style="margin-bottom: 5px;">Pekerjaan</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text " style="height: 38px;"><i class="fas fa-address-card"></i></div>
+                                          <!-- <th>NIK</th>
+                                          <th>Nama</th>
+                                          <th>Kode Surat</th>
+                                          <th>Jenis Surat</th>
+                                          <th>Waktu Pengajuan</th>
+                                          <th>Keperluan</th>
+                                          <th>Data User</th>
+                                          <th>Jenis Pengajuan</th>
+                                          <th>Option</th> -->
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    <?php foreach($tampil as $tampil): ?>
+                                      <tr>
+                                      <td><?php echo $tampil->id_pengajuan_skk ?></td>
+                                      <td><?php echo $tampil->kode_surat ?></td>
+                                      <td><?php echo $tampil->nama_skk ?></td>
+                                      <td><?php echo $tampil->tempat_lahir_skk ?></td>
+                                      <td><?php echo $tampil->tgl_lahir_skk ?></td>
+                                      <td><?php echo $tampil->gender_skk ?></td>
+                                      <td><?php echo $tampil->pekerjaan_skk ?></td>
+                                      <td><?php echo $tampil->alamat_skk ?></td>
+                                      <td><?php echo $tampil->tgl_meninggal_skk ?></td>
+                                      <td><?php echo $tampil->umur_skk ?></td>
+                                      <td><?php echo $tampil->penyebab_skk ?></td>
+                                      <td>
+                                      <a href="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                            </svg>
+                                        </a>
+                                        <a href="/Skk/hapus/<?php echo $tampil['kode_surat']; ?>" class="delete" data-toggle="modal" onclick="return confirm('apakah anda yakin untuk hapus data <?php echo $tampil['kode_surat']; ?> ?')">
+                                            <svg xmlns=" http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                            </svg>
+                                        </a>
+                                      </td>
+                                    </tr>
+                                    <?php endforeach;?>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
               </div>
-              <input type="text" name="pekerjaan" class="form-control" placeholder="Masukkan Pekerjaan" style="margin-bottom: 5px;" required>
             </div>
+            <!-- End of Main Content -->
 
-            <label for="" style="margin-bottom: 5px;">Alamat</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text " style="height: 38px;"><i class="fas fa-address-card"></i></div>
-              </div>
-              <input type="text" name="alamat" class="form-control" placeholder="Masukkan Alamat" style="margin-bottom: 5px;" required>
-            </div> 
-            
-            <label for="" style="margin-bottom: 5px;">Hari Meninggal</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text " style="height: 38px;"><i class="fas fa-address-card"></i></div>
-              </div>
-              <select class="form-control form-control" name="hari_meninggal">
-                <option selected>Pilih</option>
-                <option>Senin</option>
-                <option>Selasa</option>
-                <option>Rabu</option>
-                <option>Kamis</option>
-                <option>Jum'at</option>
-                <option>Sabtu</option>
-                <option>Minggu</option>
-              </select>
-            </div>
-            
-            <label for="" style="margin-bottom: 5px;">Tanggal Meninggal</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text " style="height: 38px;"><i class="fas fa-address-card"></i></div>
-              </div>
-              <input type="date" name="tgl_meninggal" class="form-control" placeholder="Masukan Tanggal Meninggal" style="margin-bottom: 5px;" required>
-            </div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; PSBF 2023</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
-            <label for="" style="margin-bottom: 5px;">Penyebab Kematian</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text " style="height: 38px;"><i class="fas fa-address-card"></i></div>
-              </div>
-              <input type="text" name="penyebab" class="form-control" placeholder="Masukkan Penyebab kematian" style="margin-bottom: 5px;" required>
-            </div>
+        </div>
+        <!-- End of Content Wrapper -->
 
-          <button type="submit" name="button" class="btn-primary" style="margin-top: 5px;">Submit</button>
-        </form>
-      </div>
     </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Yakin ingin keluar?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="/Logout/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?=base_url()?>/template/vendor/jquery/jquery.min.js"></script>
+    <script src="<?=base_url()?>/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="<?=base_url()?>/template/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="<?=base_url()?>/template/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="<?=base_url()?>/template/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="<?=base_url()?>/template/js/demo/chart-area-demo.js"></script>
+    <script src="<?=base_url()?>/template/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

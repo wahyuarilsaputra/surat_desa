@@ -41,18 +41,24 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
                                     </div>
-                                    <form class="user" method="GET" action="<?=base_url('/Home/validasi_login') ?>">
+                                    <?= form_open('/Login/validasi_login') ?>
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
+                                            <input type="text" class="form-control form-control-user <?= ($validation->hasError('Username')) ? 'is-invalid' : ''; ?>"
                                                 id="Username" name="Username" aria-describedby="UsernameHelp"
                                                 placeholder="Masukan Username">
+                                                <div class="invalid-feedback">
+                                                    Username Kosong
+                                                </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
+                                            <input type="password" class="form-control form-control-user <?= ($validation->hasError('Password')) ? 'is-invalid' : ''; ?>"
                                                 id="Password" name="Password" placeholder="Masukan Password">
+                                                <div class="invalid-feedback">
+                                                    Password Kosong
+                                                </div>
                                         </div>
                                         <button class="btn btn-primary btn-user btn-block">Login</button>
-                                    </form>
+                                    <?= form_close() ?>
                                 </div>
                             </div>
                         </div>
@@ -62,14 +68,14 @@
         </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?=base_url()?>/template/vendor/jquery/jquery.min.js"></script>
+    <script src="<?=base_url()?>/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?=base_url()?>/template/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="<?=base_url()?>/template/js/sb-admin-2.min.js"></script>
 
 </body>
 
